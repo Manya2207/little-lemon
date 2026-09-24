@@ -1,0 +1,24 @@
+.navbar {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.nav-logo { width: 10%; height: auto; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  color: #064e3b;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #064e3b;
+  font-weight: bold;
+}

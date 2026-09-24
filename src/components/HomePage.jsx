@@ -1,77 +1,53 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import recipes from "../constants/recipes.js";
+import "../HomePage.css";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 gap-20">
-      {/* Header Section */}
-      <header className="w-full flex flex-row justify-evenly bg-green-900 text-white py-8 px-4 md:px-0">
-        <div className="flex flex-col justify-around w-[50%]">
-          <h1 className="text-4xl font-semibold text-yellow-300">
-            Little Lemon
-          </h1>
-          <div className="flex flex-col gap-7">
-            <h2 className="text-2xl font-semibold">Munich</h2>
-            <p className="text-lg">
-              Your favorite restaurant for delicious meals <br /> Book Now!
-            </p>
-            <button className="button">
-              <Link to="/booking" className="!text-black">
-                Reserve
-              </Link>
-            </button>
+    <div className="home-page">
+      <header className="home-header">
+        <div className="header-text">
+          <h1 style={{ color: "#fde047" }}>Little Lemon</h1>
+          <div>
+            <h2>Munich</h2>
+            <p>Your favorite restaurant for delicious meals. Book Now!</p>
+            <Link to="/booking" className="btn">
+              Reserve
+            </Link>
           </div>
         </div>
-        <img
-          src="home.jpg"
-          alt="home"
-          className="w-[40%] hidden md:block h-[90%] rounded-4xl shadow-2xl relative top-9"
-        />
+        <img src="home.jpg" alt="home" className="header-img" />
       </header>
 
-      {/* Main Content */}
-      <main className="flex flex-col px-4 py-12 space-y-6  gap-20 ">
-        <nav className="flex flex-col md:flex-row items-center justify-around gap-24 w-full h-[50%]   rounded-lg p-6">
-          <h1 className="text-xl font-bold">Special this week!</h1>
-          <button className="bg-yellow-500 h-[120%] w-[20%] cursor-pointer rounded-xl transition-all ease-in duration-300 hover:bg-white hover:scale-105">
-            <Link to="/OnlineMenu" className="!text-black">
-              Online Menu
-            </Link>
-          </button>
+      <main>
+        <nav className="specials-nav">
+          <h1>Special this week!</h1>
+          <Link to="/OnlineMenu" className="btn">
+            Online Menu
+          </Link>
         </nav>
 
-        {/* Cards Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-6">
+        <section className="menu-grid">
           {recipes.map((recipe) => (
-            <div
-              key={recipe.id}
-              className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center hover:shadow-xl transition-shadow duration-300"
-            >
-              {/* Image */}
-              <img
-                src={recipe.image}
-                alt={recipe.title}
-                className="h-56 w-full object-cover"
-              />
-
-              {/* Content */}
-              <div className="p-5 w-[100%]  flex flex-col justify-between flex-grow space-y-3 gap-10 ">
-                <h3 className="text-xl font-bold text-gray-800 shadow-2xl">
-                  {recipe.title}
-                </h3>
-                <p className="text-gray-600 text-sm flex-grow">
-                  {recipe.description}
-                </p>
-                <div className="flex justify-between items-center w-full ">
-                  <span className="text-lg font-semibold text-amber-700">
+            <div key={recipe.id} className="recipe-card">
+              <img src={recipe.image} alt={recipe.title} />
+              <div className="card-content">
+                <h3>{recipe.title}</h3>
+                <p>{recipe.description}</p>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <span style={{ fontWeight: "bold", color: "#b45309" }}>
                     ${recipe.price}
                   </span>
-                  <button className="md:button w-[40%] bg-yellow-500 h-[120%] rounded-xl transition-all ease-in duration-300 hover:bg-white hover:scale-105">
-                    <Link to="/booking" className="!text-black">
-                      Reserve a Table
-                    </Link>
-                  </button>
+                  <Link to="/booking" className="btn">
+                    Reserve a Table
+                  </Link>
                 </div>
               </div>
             </div>

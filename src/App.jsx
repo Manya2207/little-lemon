@@ -34,22 +34,21 @@ function App() {
             className="footer-logo w-[50%]"
           />
           <p className="footer-description">
-            We are a family-owned Mediterranean restaurant <br />
-            focused on traditional recipes served <br />
-            with a modern twist.
+            We are a family-owned Mediterranean restaurant, dedicated to serving
+            traditional recipes with a contemporary twist.
           </p>
         </div>
 
         {/* Location and Rights */}
         <div className="footer-section w-1/3 flex flex-col items-center gap-3 text-center">
-          <h2 className="footer-location">Location: Munich</h2>
+          <h2 className="footer-location">Location: Earth</h2>
           <p className="footer-rights">&copy; 2025 All rights reserved</p>
         </div>
 
         {/* Contact Information */}
         <div className="footer-section w-1/3 flex flex-col items-center gap-2 text-center">
           <p className="footer-contact-title">Contact us:</p>
-          <p className="footer-phone">+1 234 567 890</p>
+          <p className="footer-phone">+91 xxxxx xxxxx</p>
           <p className="footer-email">
             <a
               href="mailto:support@example.com"
