@@ -1,23 +1,25 @@
+/* Root Container */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
+/* Logo Styles */
 .logo {
-  height: 6em;
+  height: 1em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter 300ms ease-in-out;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Logo Spin Animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +35,38 @@
   }
 }
 
+/* Card Styles */
 .card {
   padding: 2em;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Read the Docs Text */
 .read-the-docs {
   color: #888;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Accessibility Improvements */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus {
+  outline: 2px solid #646cff;
+  outline-offset: 4px;
+}
+
+a:hover {
+  text-decoration: underline;
 }

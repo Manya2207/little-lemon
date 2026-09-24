@@ -1,21 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../App.css"
 
 const Nav = () => {
   return (
-    <nav
-      className='w-full shadow   flex flex-col lg:flex-row justify-around items-center px-6 py-4'
-      role="navigation"
-      aria-label="Main Navigation"
-    >
-      <img src="logo.png" alt="logo" className='w-[20%] h-[80%]'/>
-      <ul className='flex gap-4 text-green-800'>
-        <li><Link to="/" className=' !text-green-800'>Home</Link></li>
-        <li><Link to="/Booking" className="!text-green-800">Booking</Link></li>
-        <li><Link to="/OnlineMenu" className="!text-green-800">Online Menu</Link></li>
+    <nav className="w-full shadow flex flex-row justify-between items-center px-6 py-4">
+      {/* Logo */}
+      <img src="logo.png" alt="Little Lemon Logo" className="w-[10%] h-auto" />
+
+      {/* Navigation Links - ADDED list-none */}
+      <ul className="flex gap-8 text-green-800 list-none m-0 p-0">
+        <li>
+          <Link
+            to="/"
+            className="hover:text-green-600 transition-colors no-underline"
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/Booking"
+            className="hover:text-green-600 transition-colors no-underline"
+          >
+            Booking
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/OnlineMenu"
+            className="hover:text-green-600 transition-colors no-underline"
+          >
+            Online Menu
+          </Link>
+        </li>
       </ul>
     </nav>
   );
 };
-
 export default Nav;
